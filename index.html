@@ -3,98 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Silicon</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="favicon.ico" type="images/silicon-icon">
 </head>
 <body>
+  <div class="bg-grad">
   <header>
     <nav>
-      <div class="nav-logo">
-        <img src="/images/logo-silicon.svg" alt="Silicon logo">
-        <span>Silicon</span>
-      </div>
-  
-      <span>Features</span>
-  
-      <div class="switch">
+      <a id="nav-logo" href="index.html"><img src="/images/logo.svg" alt="Silicon logo"></a>
+      
+      <a id="nav-features" href="#features">Features</a>
+      
+      <div id="darkmode-switch">
         <span>Dark mode</span>
-        <div class="toggle-parent">
+        <button class="toggle-parent">
           <div class="toggle-child"></div>
-        </div>
+        </button>
       </div>
-  
-      <button onclick="alert('click')">
-        <img src="/images/icon.svg" alt="icon">
-        Sign in / up
+      
+      <a id="sign-in" href="#" class="btn-primary">
+        <img src="/images/icon.svg" alt="user icon">
+        <span>Sign in / up</span>
+      </a>
+
+      <button class="burger">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
       </button>
     </nav>
-
-    <div class="header">
-      <h1>Manage All Your <br>Money in One App</h1>
-      <p>We offer you a new generation of the mobile banking. Save, spend & manage money in your pocket.</p>
-      <button class="market-btn"><img src="/images/app-store.svg" alt="App Store"></button>
-      <button class="market-btn"><img src="/images/google-play.svg" alt="Google Play"></button>
-      <div class="more">
-        <button class="more-btn"><img src="/images/chevron.svg" alt="chevron"></button>
-        <span>Discover more</span>
+    
+    <section class="hero">
+      <div class="headline">
+        <h1 class="D4">Manage All Your<br>Money in One App</h1>
       </div>
-    </div>
-    <img src="/images/phones.svg" alt="phones">
+      <div class="content">
+        <p class="text-L">We offer you a new generation of the mobile banking.<br class="no-mobile"> Save, spend & manage money in your pocket.</p>
+        <div class="mkt-btns">
+          <a id="apple" class="btn-market btn-primary" href="#"><img src="/images/app-store.svg" alt="App Store"></a>
+          <a id="google" class="btn-market btn-primary" href="#"><img src="/images/google-play.svg" alt="Google Play"></a>
+        </div>
+        <div class="more">
+          <button class="more-btn shadow"><img src="/images/chevron.svg" alt="chevron"></button>
+          <span class="text-S">Discover more</span>
+        </div>
+      </div>
+      <div class="images">
+        <img class="phones" src="/images/phones-hero.svg" alt="Bank app on phone">
+      </div>
+    </section>
   </header>
-
+  </div>
+  
   <main>
-    <div class="logos">
-      Logos<br>
-      <div class="logo"><img src="/images/logo-1.svg" alt="logo 1"></div>
-      <div class="logo"><img src="/images/logo-2.svg" alt="logo 2"></div>
-      <div class="logo"><img src="/images/logo-3.svg" alt="logo 3"></div>
-      <div class="logo"><img src="/images/logo-4.svg" alt="logo 4"></div>
-      <div class="logo"><img src="/images/logo-5.svg" alt="logo 5"></div>
-      <div class="logo"><img src="/images/logo-6.svg" alt="logo 6"></div>
-    </div>
-    <div class="features">features here
-      <section>
-        <img src="/images/phone-card.svg" alt="phone">
-        <h2>App Features</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <div class="icon-box">
-          <img src="/images/icon-card.svg" alt="icon">
-          <h2>Feature</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="icon-box">
-          <img src="/images/icon-shield.svg" alt="icon">
-          <h2>Feature</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="icon-box">
-          <img src="/images/icon-stats.svg" alt="icon">
-          <h2>Feature</h2><br>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="icon-box">
-          <img src="/images/icon-support.svg" alt="icon">
-          <h2>Feature</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="icon-box">
-          <img src="/images/icon-wallet.svg" alt="icon">
-          <h2>Feature</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="icon-box">
-          <img src="/images/icon-stanard.svg" alt="icon">
-          <h2>Feature</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-      </section>
-    </div>
+    <section id="brands">
+      <div class="brand-box shadow"><img src="/images/brand-1.svg" alt="Brand logo"></div>
+      <div class="brand-box shadow"><img src="/images/brand-2.svg" alt="Brand logo"></div>
+      <div class="brand-box shadow"><img src="/images/brand-3.svg" alt="Brand logo"></div>
+      <div class="brand-box shadow"><img src="/images/brand-4.svg" alt="Brand logo"></div>
+      <div class="brand-box shadow" id="logo-5"><img src="/images/brand-5.svg" alt="Brand logo"></div>
+      <div class="brand-box shadow" id="logo-6"><img src="/images/brand-6.svg" alt="Brand logo"></div>
+    </section>
+    <section class="features" id="features">
+      <img src="/images/phone-card.svg" alt="phone">
+      <h2>App Features</h2>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <div class="icon-box">
+        <img src="/images/icon-card.svg" alt="icon">
+        <h2>Feature</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="icon-box">
+        <img src="/images/icon-shield.svg" alt="icon">
+        <h2>Feature</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="icon-box">
+        <img src="/images/icon-stats.svg" alt="icon">
+        <h2>Feature</h2><br>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="icon-box">
+        <img src="/images/icon-support.svg" alt="icon">
+        <h2>Feature</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="icon-box">
+        <img src="/images/icon-wallet.svg" alt="icon">
+        <h2>Feature</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="icon-box">
+        <img src="/images/icon-stanard.svg" alt="icon">
+        <h2>Feature</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+    </section>
     <div class="slider">
       <h1>How Does It Work?</h1>
       <div class="carousel">
-        <img src="/images/phone-1" alt="phone">
-        <img src="/images/phone-2" alt="phone">
-        <img src="/images/phone-2" alt="phone">
+        <img src="/images/phone-1.svg" alt="phone">
+        <img src="/images/phone-2.svg" alt="phone">
+        <img src="/images/phone-2.svg" alt="phone">
       </div>
       <h2>Latest transaction history</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, at?</p>
@@ -130,8 +139,7 @@
   
   <footer>
 
-    <a href=""><button>Text</button></a>
-
   </footer>
+ 
 </body>
 </html>
