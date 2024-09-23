@@ -12,6 +12,7 @@
   --color-700: #565973;
   --color-800: #33354D;
   --color-900: #0B0F19;
+  /* .5rem mobile */
   --container-padding: 1rem;
   /* --background-gradient: linear-gradient(170deg, rgba(99, 102, 241, .1) 0%, rgba(217, 70, 239, .05) 42%, rgba(241, 244, 253, .07) 83%); */
   --background-gradient: linear-gradient(170deg, rgba(241, 244, 253, .07), rgba(217, 70, 239, .07));
@@ -46,6 +47,12 @@ a:hover {
   font-size: 18px;
   font-weight: 400;
 }
+.text-M {
+  color: var(--color-700);
+  /* default */
+  font-size: 16px;
+  font-weight: 400;
+}
 .text-S {
   color: var(--color-700);
   font-size: 14px;
@@ -55,6 +62,18 @@ a:hover {
   color: var(--color-900);
   font-size: 34px;
   font-weight: 800;
+}
+.h1 {
+  color: var(--color-900);
+  /* font-size: 40px; */
+  font-size: 28px;
+  font-weight: 800;
+}
+.h5 {
+  color: var(--color-900);
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: .5rem;
 }
 .btn-primary {
   background-color: var(--color-primary);
@@ -101,11 +120,9 @@ a:hover {
 /* Debug borders */
 header, main, footer {
   border: #6366F1 2px solid;
-  /* border-radius: 10px; */
 }
 nav, section {
   border: #D946EF 2px solid;
-  /* border-radius: 8px; */
 }
 
 /* Content */
@@ -113,10 +130,9 @@ nav, section {
 nav, section {
   margin-inline: auto;
   padding-inline: var(--container-padding);
-  border: red 2px solid;
 }
 header, main, footer {
-  width: 100%;
+  /* width: 100%; */
 }
 nav {
   display: grid;
@@ -194,13 +210,13 @@ nav {
   background-color: var(--color-800);
 }
 .headline {
-  grid-area: headline;
+  grid-area: hero-headline;
 }
 .hero-content {
-  grid-area: content;
+  grid-area: hero-content;
 }
 .hero-images {
-  grid-area: images;
+  grid-area: hero-images;
 }
 .phones {
   display: none;
@@ -210,8 +226,8 @@ nav {
   padding-top: 2rem;
   display: grid;
   grid-template-areas: 
-    "headline"
-    "content"
+    "hero-headline"
+    "hero-content"
   ;
   grid-template-columns: 1fr;
   position: relative;
@@ -238,6 +254,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 2.5rem;
+  /* margin-top: 2rem; */
   &:hover {
     cursor: pointer;
   }
@@ -251,7 +268,6 @@ nav {
   margin-right: 1rem;
   cursor: pointer;
 }
-
 #brands {
   display: none;
   justify-content: space-between;
@@ -265,6 +281,51 @@ nav {
   border-radius: 8px;
   height: 100px;
   width: 160px;
+}
+
+.feature-img {
+  display: none;
+  width: 100%;
+  grid-area: feature-img;
+}
+.feature-text {
+  grid-area: feature-text;
+  text-align: center;
+  padding-block: 1rem;
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+.cards {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.features {
+  display: grid;
+  grid-template-areas: 
+    "feature-text"
+    "cards"
+  ;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+.icon-card {
+  display: flex;
+  gap: 1.5rem;
+  .icon {
+    min-width: 60px;
+    max-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(99, 102, 241, 0.08);
+    border-radius: .5rem;
+  }
+  h2 {
+    margin-bottom: .5rem;
+  }
 }
 
 /* Media queries */
@@ -286,8 +347,8 @@ nav {
   .hero {
     padding-top: 3rem;
     grid-template-areas: 
-      "headline headline"
-      "content images"
+      "hero-headline hero-headline"
+      "hero-content hero-images"
     ;
     grid-template-rows: 180px auto;
     grid-template-columns: 1fr 1fr;
@@ -320,6 +381,16 @@ nav {
   #logo-5, #logo-6 {
     display: none;
   }
+  .features {
+    grid-template-areas: 
+      "feature-text feature-text"
+      "cards cards"
+    ;
+    padding-bottom: 5rem;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* @media (min-width: 1400px) { */
@@ -343,8 +414,8 @@ nav {
   .hero {
     padding-top: 7rem;
     grid-template-areas: 
-      "headline images"
-      "content images"
+      "hero-headline hero-images"
+      "hero-content hero-images"
     ;
     /* grid-template-rows: 180px auto auto; */
     h1 {
@@ -362,5 +433,21 @@ nav {
   }
   #logo-5, #logo-6 {
     display: flex;
+  }
+  .features {
+    grid-template-areas: 
+      "feature-img feature-text"
+      "feature-img cards "
+    ;
+    column-gap: 10rem;
+    .feature-img {
+      display: block;
+    }
+  }
+  .feature-text {
+    text-align: left;
+  }
+  .cards {
+    gap: 3rem;
   }
 }
