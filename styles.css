@@ -12,6 +12,7 @@
   --color-700: #565973;
   --color-800: #33354D;
   --color-900: #0B0F19;
+  --color-sys-warning: #FFBA08;
   --container-padding: .5rem;
   /* --background-gradient: linear-gradient(170deg, rgba(99, 102, 241, .1) 0%, rgba(217, 70, 239, .05) 42%, rgba(241, 244, 253, .07) 83%); */
   --background-gradient: linear-gradient(170deg, rgba(241, 244, 253, .07), rgba(217, 70, 239, .07));
@@ -424,6 +425,89 @@ li {
 }
 /* Font awesome för pil */
 
+.testimonials {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-block: 4rem;
+  gap: 1.5rem;
+}
+.testimonial {
+  position: relative;
+  padding: 1rem;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  /* darkmode white 4% */
+}
+.test-icon {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-primary);
+  border-radius: 6px;
+  top: -12%;
+  box-shadow: 0px 10px 16px 0px rgba(99, 102, 241, 0.5);
+}
+.stars {
+  padding-block: 1rem;
+  font-weight: 500;
+  .white {
+    color: var(--color-500);
+  }
+  .yellow {
+    color: var(--color-sys-warning);
+  }
+}
+
+.subscribe {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  place-items: center;
+  padding-block: 4rem;
+  margin-inline: .5rem;
+}
+.subscribe-text {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-inline: var(--container-padding);
+}
+.input-group {
+  position: relative;
+  display: flex;
+  height: 52px;
+  input {
+    border: var(--color-500) 1px solid;
+    border-radius: 8px 0 0 8px;
+    width: 100%;
+    padding-left: 2rem;
+  }
+  button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    /* padding: 1rem 2rem; */
+    padding: 0rem 1.5rem;
+    border: none;
+    font-size: 16px;
+    border-radius: 0 8px 8px 0;
+  }
+}
+.envelope {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.desktop {
+  display: none;
+}
+
+
+
+footer {
+  text-align: center;
+  padding-block: 1rem;
+}
 
 /* Media queries */
 
@@ -505,6 +589,11 @@ li {
   #img-2 {
     opacity: 80%;
   }
+
+  .subscribe {
+    grid-template-columns: 1fr 1fr;
+    margin-inline: auto;
+  }
 }
 
 /* @media (min-width: 1400px) { */
@@ -521,7 +610,7 @@ li {
   .h4 {
     font-size: 24px;
   }
-  nav, section {
+  nav, section, .subscribe {
     max-width: 1320px;
   }
   nav {
@@ -598,5 +687,23 @@ li {
   }
   .features-desktop {
     display: grid;
+  }
+  .testimonials {
+    display: grid;
+  }
+
+  .subscribe {
+    padding-inline: 10rem;
+    grid-template-columns: 3fr 2fr;
+  }
+  .input-group button {
+    padding: 0rem 2rem;
+  }
+  .desktop {
+    display: inline;
+  }
+
+  footer {
+    padding-block: 3rem;
   }
 }
