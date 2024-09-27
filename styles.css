@@ -17,18 +17,18 @@
   /* --background-gradient: linear-gradient(170deg, rgba(99, 102, 241, .1) 0%, rgba(217, 70, 239, .05) 42%, rgba(241, 244, 253, .07) 83%); */
   --background-gradient: linear-gradient(170deg, rgba(241, 244, 253, .07), rgba(217, 70, 239, .07));
 }
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  background-color: white;
+  background-color: var(--color-white);
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
 }
 
@@ -38,7 +38,6 @@ body {
 }
 a {
   text-decoration: none;
-  font-size: large;
   color: var(--color-800);
 }
 a:hover {
@@ -47,45 +46,45 @@ a:hover {
 }
 .text-L {
   color: var(--color-700);
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
 }
 .text-M {
   color: var(--color-700);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
 }
 .text-S {
   color: var(--color-700);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 .D4 {
   color: var(--color-900);
   /* 34 44 56 */
-  font-size: 34px;
+  font-size: 2.125rem;
   font-weight: 800;
 }
 .h1 {
   color: var(--color-900);
   /* 28 32 40 */
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 800;
 }
 .h2 {
   color: var(--color-900);
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 800;
 }
 .h4 {
   color: var(--color-900);
   /* 22 22 24 */
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 800;
 }
 .h5 {
   color: var(--color-900);
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 800;
   margin-bottom: .5rem;
 }
@@ -99,14 +98,14 @@ a:hover {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
-  transition: all .2s;
+  transition: all .2s ease-in-out;
   &:hover, &:focus {
     /* border: rgba(var(--color-primary), .35); */
     background-color: var(--color-white);
     outline: rgba(99, 102, 241, 0.35) 2px solid;
-    color: var(--color-primary);
+    color: var(--color-primary);  
     .sign-in-icon {
       /* Image color is the same as background */
       background-color: var(--color-primary);
@@ -161,7 +160,6 @@ nav {
 }
 #nav-features {
   color: var(--color-800);
-  font-size: 16px;
   font-weight: 600;
   display: none;
 }
@@ -174,7 +172,6 @@ nav {
   gap: 10px;
   span {
     color: var(--color-700);
-    font-size: 16px;
     font-weight: 600;
     display: none;
   }
@@ -370,6 +367,8 @@ nav {
   img {
     /* 270 200 292 */
     width: 270px;
+    position: relative;
+    z-index: 1;
   }
 }
 #img-1, #img-2, #img-4 {
@@ -377,7 +376,7 @@ nav {
 }
 #phone-body {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -418,11 +417,13 @@ nav {
   }
 }
 ul {
-  list-style-image: url("/images/circle-check.svg");
-  list-style-position: inside;
+  list-style: none;
 }
 li {
-  padding-block: .5rem;
+  background-image: url("/images/circle-check.svg");
+  background-repeat: no-repeat;
+  margin-block: .5rem;
+  padding-left: 1.8rem;
 }
 /* Font awesome för pil */
 
@@ -468,12 +469,11 @@ li {
   gap: 1rem;
   margin-top: 1rem;
   .name {
-    font-size: 16px;
     font-weight: 700;
     color: var(--color-900);
   }
   .role {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
     color: var(--color-600);
   }
@@ -509,7 +509,7 @@ li {
     /* padding: 1rem 2rem; */
     padding: 0rem 1.5rem;
     border: none;
-    font-size: 16px;
+    font-size: 1rem;
     border-radius: 0 8px 8px 0;
   }
 }
@@ -537,10 +537,10 @@ footer {
     display: inline;
   }
   .D4 {
-    font-size: 44px;
+    font-size: 2.75rem;
   }
   .h1 {
-    font-size: 32px;
+    font-size: 2rem;
   }
   nav, section {
     max-width: 720px;
@@ -623,13 +623,13 @@ footer {
     --container-padding: 1rem;
   }
   .D4 {
-    font-size: 56px;
+    font-size: 3.5rem;
   }
   .h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   .h4 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
   nav, section, .subscribe {
     max-width: 1320px;
