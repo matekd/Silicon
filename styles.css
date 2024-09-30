@@ -33,7 +33,8 @@ body {
   font-style: normal;
 }
 
-/* Utils & defaults */
+/* ----- Utils & defaults ----- */
+
 .no-mobile {
   display: none;
 }
@@ -160,7 +161,7 @@ nav, section {
   /* border: #D946EF 2px solid; */
 }
 
-/* Content */
+/* ----- Content ----- */
 
 nav, section {
   margin-inline: auto;
@@ -189,26 +190,48 @@ nav {
   gap: 10px;
 }
 .toggle-parent {
-  padding: 2px;
-  width: 46px;
-  height: 24px;
-  background-color: var(--clr-600);
-  border-radius: 12px;
-  border: none;
+  --_h: 20px;
+  --_w: 42px;
+  --_p: 2px;
   
-  .toggle-child {
-    width: 20px;
-    height: 20px;
-    background-color: var(--clr-white);
-    border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  box-sizing: content-box;
+  height: var(--_h);
+  width: var(--_w);
+  padding: var(--_p);
+
+  input[type="checkbox"] {
+    appearance: none;
   }
-  &:active {
-    .toggle-child {
-      margin-left: 22px;
-      transition: margin-left 0.1s;
-    }
+  input[type="checkbox"]:focus-visible + .toggle {
+    outline: var(--clr-900) 2px solid;
+  }
+  input[type="checkbox"]:checked + .toggle::before {
+    left: calc(100% - var(--_h) - var(--_p));
+  }
+  input[type="checkbox"]:checked + .toggle{
+    background-color: var(--clr-primary);
+  }
+  .toggle {
+    position: absolute;
+    inset: 0;
+    border-radius: 100vw;
+    background-color: var(--clr-500);
+  }
+  .toggle::before {
+    content: '';
+    position: absolute;
+    top: var(--_p);
+    left: var(--_p);
+    height: var(--_h);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--clr-white);
+    transition: all 200ms;
   }
 }
+
 #sign-in {
   display: none;
   img {
@@ -473,7 +496,6 @@ li {
   margin-block: .5rem;
   padding-left: 1.8rem;
 }
-/* Font awesome för pil */
 
 .testimonials {
   display: none;
@@ -633,14 +655,13 @@ li {
   margin-inline: auto;
   margin-block: 3rem;
 }
-/* 13:45 Design sections with css, bygg en hem.. */
 
 footer {
   text-align: center;
   padding-block: 1rem;
 }
 
-/* Media queries */
+/* ----- Media queries ----- */
 
 @media (min-width: 768px) {
   .no-mobile {
@@ -831,22 +852,22 @@ footer {
     display: grid;
   }
 
-.FAQ {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: 
-    "faq-text drop-downs"
-    "contact drop-downs";
-}
-.faq-text {
-  text-align: left;
-}
-.contact {
-  display: flex;
-}
-.call, .sms {
-  height: fit-content;
-}
+  .FAQ {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+      "faq-text drop-downs"
+      "contact drop-downs";
+  }
+  .faq-text {
+    text-align: left;
+  }
+  .contact {
+    display: flex;
+  }
+  .call, .sms {
+    height: fit-content;
+  }
 
   .subscribe {
     padding-inline: 10rem;
