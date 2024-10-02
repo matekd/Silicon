@@ -1,0 +1,7 @@
+footer {
+  text-align: center;
+  padding-block: 1rem;
+  @include desktop {
+    padding-block: 3rem;
+  }
+}

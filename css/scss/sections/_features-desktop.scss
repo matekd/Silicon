@@ -1,0 +1,50 @@
+.features-desktop {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  row-gap: 4rem;
+  max-width: 1076px;
+  padding-block: 6rem;
+  & > div {
+    padding-top: 4rem;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .cards {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .icon-card {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: start;
+    .h5 {
+      margin-bottom: .5rem;
+    }
+  }
+  & > img {
+    width: 100%;
+  }
+  a {
+    width: fit-content;
+  }
+}
+ul {
+  list-style: none;
+  li {
+    background-image: url("/images/circle-check.svg");
+    background-repeat: no-repeat;
+    margin-block: .5rem;
+    padding-left: 1.8rem;
+  }
+}
+
+.features-desktop {
+  @include desktop {
+    display: grid;
+  }
+}

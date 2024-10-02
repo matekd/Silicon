@@ -1,0 +1,53 @@
+.subscribe {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  place-items: center;
+  padding-block: 4rem;
+  margin-inline: .5rem;
+}
+.subscribe-text {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-inline: var(--container-padding);
+}
+.input-group {
+  position: relative;
+  display: flex;
+  height: 52px;
+  input {
+    border: var(--clr-500) 1px solid;
+    border-radius: 8px 0 0 8px;
+    width: 100%;
+    padding-left: 2rem;
+  }
+  button {
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+    padding: 0rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+    border-radius: 0 8px 8px 0;
+  }
+}
+.envelope {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.subscribe {
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    margin-inline: auto;
+  }
+  @include desktop {
+    padding-inline: 10rem;
+    grid-template-columns: 3fr 2fr;
+    .input-group button {
+      padding: 0rem 2rem;
+    }
+  }
+}

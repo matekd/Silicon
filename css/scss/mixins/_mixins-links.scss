@@ -1,0 +1,12 @@
+@mixin links {
+  @include text();
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+a {
+  @include links();
+}

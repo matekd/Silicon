@@ -35,3 +35,9 @@ nav, section {
     display: inline;
   }
 }
+
+:root {
+  @include desktop() {
+    --container-padding: 1rem;
+  }
+}
