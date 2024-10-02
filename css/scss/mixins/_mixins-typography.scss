@@ -1,0 +1,25 @@
+@mixin text {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin heading {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.h6 {
+  @include heading();
+  font-weight: 600;
+}
+
+.D4, .h1, .h2, .h4, .h5 {
+  @include heading();
+}
+
+.nav-text {
+  @include text();
+  font-weight: 600;
+}

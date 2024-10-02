@@ -1,0 +1,61 @@
+.text-L {
+  font-size: 1.125rem;
+}
+
+.text-M {
+  font-size: 1rem;
+}
+
+.text-S {
+  font-size: 0.875rem;
+}
+
+.nav-text {
+  font-size: 1rem;
+}
+
+.D4 {
+  font-size: 2.125rem;
+  @include tablet {
+    font-size: 2.75rem;
+  }
+  @include desktop {
+    font-size: 3.5rem;
+  }
+}
+
+.h1 {
+  font-size: 1.75rem;
+  @include tablet {
+    font-size: 2rem;
+  }
+  @include desktop {
+    font-size: 2.5rem;
+  }
+}
+
+.h2 {
+  font-size: 1.5rem;
+  @include tablet {
+    font-size: 2rem;
+  }
+}
+
+.h4 {
+  font-size: 1.375rem;
+  @include desktop {
+    font-size: 1.5rem;
+  }
+}
+
+.h5 {
+  font-size: 1.25rem;
+}
+
+.h6 {
+  font-size: 1rem;
+}
+
+a {
+
+}

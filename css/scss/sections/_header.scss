@@ -1,0 +1,235 @@
+nav {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr auto auto;
+  gap: 1.5rem;
+  padding-block: .5rem;
+}
+#nav-logo {
+  background-image: url(/images/logo.svg);
+  background-repeat: no-repeat;
+  height: 44px;
+  width: 122px;
+}
+#nav-features {
+  display: none;
+  width: fit-content;
+  &:hover {
+    color: var(--clr-primary);
+  }
+}
+#darkmode-switch {
+  display: flex;
+  gap: 10px;
+}
+.toggle-parent {
+  --_h: 20px;
+  --_w: 42px;
+  --_p: 2px;
+
+  position: relative;
+  cursor: pointer;
+  box-sizing: content-box;
+  height: var(--_h);
+  width: var(--_w);
+  padding: var(--_p);
+
+  input[type="checkbox"] {
+    appearance: none;
+  }
+  input[type="checkbox"]:focus-visible + .toggle {
+    outline: var(--clr-900) 2px solid;
+  }
+  input[type="checkbox"]:checked + .toggle::before {
+    left: calc(100% - var(--_h) - var(--_p));
+  }
+  input[type="checkbox"]:checked + .toggle{
+    background-color: var(--clr-primary);
+  }
+  .toggle {
+    position: absolute;
+    inset: 0;
+    border-radius: 100vw;
+    background-color: var(--clr-500);
+  }
+  .toggle::before {
+    content: '';
+    position: absolute;
+    top: var(--_p);
+    left: var(--_p);
+    height: var(--_h);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--clr-white);
+    transition: all 200ms;
+  }
+}
+#sign-in {
+  display: none;
+  img {
+    margin-right: .5rem;
+    border-radius: 50%;
+  }
+}
+.burger {
+  @include center;
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  i {
+    font-size: 1.25rem;
+  }
+}
+
+.headline {
+  grid-area: hero-headline;
+  text-align: center;
+}
+.hero-content {
+  grid-area: hero-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+  text-align: center;
+  & > p {
+    padding-bottom: 3rem;
+  }
+}
+.hero-images {
+  grid-area: hero-images;
+}
+.phones {
+  display: none;
+  width: 100%;
+}
+.hero {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "hero-headline"
+  "hero-content"
+  ;
+}
+.mkt-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--clr-white);
+  text-align: left;
+  .btn-market {
+    gap: 1rem;
+  }
+  .mkt-text {
+    font-size: .625rem;
+    font-weight: 600;
+  }
+  .mkt-title {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+  }
+}
+.dark-apple {
+  display: none;
+}
+.more-container {
+  position: relative;
+  min-height: 8rem;
+}
+.hero-more {
+  @include center;
+  position: absolute;
+  gap: 1rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 2.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.more-btn {
+  height: 44px;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--clr-white);
+  background-image: url(/images/chevron.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.more-btn.more-btn-expand {
+  rotate: 180deg;
+  background-color: var(--clr-primary);
+  background-image: url(/images/chevron-white.svg);
+}
+
+header {
+  @include tablet {
+    #darkmode-switch span {
+      display: block;
+    }
+    nav {
+      gap: 4rem;
+      padding-block: 1rem;
+    }
+    .hero {
+      padding-top: 3rem;
+      grid-template-areas: 
+        "hero-headline hero-headline"
+        "hero-content hero-images"
+      ;
+      grid-template-rows: 180px auto;
+      grid-template-columns: 1fr 1fr;
+      .phones {
+        display: block;
+      }
+      p {
+        text-align: left;
+      }
+    }
+    .mkt-btns {
+      flex-direction: row;
+      gap: 1rem;
+      .btn-market {
+        padding: .75rem .7rem;
+      }
+    }
+    .hero-more {
+      left: var(--container-padding);
+      transform: translateX(0);
+    }
+  }
+
+  @include desktop {
+    nav {
+      grid-template-columns: auto 1fr auto auto;
+      gap: 1.5rem;
+    }
+    #nav-features, #sign-in {
+      display: flex;
+    }
+    .burger {
+      display: none;
+    }
+    .hero {
+      padding-top: 7rem;
+      grid-template-areas: 
+        "hero-headline hero-images"
+        "hero-content hero-images"
+      ;
+      h1 {
+        text-align: left;
+      }
+    }
+    .mkt-btns {
+      gap: 1.5rem;
+      .btn-market {
+        padding: .75rem 1.5rem;
+      }
+    }
+  }
+}

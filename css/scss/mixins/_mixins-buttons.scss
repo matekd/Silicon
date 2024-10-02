@@ -1,0 +1,50 @@
+@mixin btn {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  border-radius: 8px;
+  border: none;
+  padding: .75rem 1.5rem;
+  @include center;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all .2s;
+}
+.btn-primary {
+  @include btn();
+  &:hover, &:focus {
+    background-color: var(--clr-white);
+    outline: rgba(99, 102, 241, 0.35) 2px solid;
+    color: var(--clr-primary);  
+    .sign-in-icon {
+      /* Image color is the same as background */
+      background-color: var(--clr-primary);
+    }
+  }
+}
+
+.btn-market {
+  @include btn();
+  background-color: var(--clr-900);
+  &:hover, &:focus {
+    background-color: var(--clr-900);
+    text-decoration: none;
+  }
+}
+
+.more-btn {
+  height: 44px;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--clr-white);
+  background-image: url(/images/chevron.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  &.more-btn-expand {
+    rotate: 180deg;
+    background-color: var(--clr-primary);
+    background-image: url(/images/chevron-white.svg);
+  }
+}

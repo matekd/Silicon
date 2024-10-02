@@ -1,0 +1,66 @@
+:root {
+  --clr-primary: #6366F1;
+  --clr-white: #fff;
+  --clr-100: #F3F6FF;
+  /* --clr-200: #EFF2FC; */
+  --clr-300: #E2E5F1; /* borders */
+  /* --clr-400: #D4D7E5; */
+  --clr-500: #B4B7C9;
+  --clr-600: #9397AD;
+  --clr-700: #565973;
+  --clr-800: #33354D;
+  --clr-900: #0B0F19;
+  --clr-sys-warning: #FFBA08;
+  --clr-sys-success: #22C55E;
+  --container-padding: .5rem;
+  --background-gradient: linear-gradient(170deg, rgba(241, 244, 253, .07), rgba(217, 70, 239, .07));
+
+}
+
+.dark {
+  color-scheme: dark;
+  body {
+    background-color: #0B0F19;
+  }
+  --clr-600: white;
+  --clr-700: white;
+  --clr-900: white;
+  --clr-300: rgba(255, 255, 255, 0.15);
+  .bg-gray, .testimonial, .panel {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+  .more-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: url(/images/chevron-white.svg);
+  }
+  #darkmode-switch .nav-text{
+    color: var(--clr-primary);
+  }
+  #nav-logo {
+    background-image: url(/images/logo-darkmode.svg);
+  }
+  .nav-text {
+    color: white;
+  }
+  .mkt-title, .mkt-text {
+    color: var(--clr-800);
+  }
+  .dark-apple {
+    display: block;
+  }
+  .white-apple {
+    display: none;
+  }
+}
+
+.text-L, .text-M, .text-S {
+  color: var(--clr-700);
+}
+
+.nav-text, a {
+  color: var(--clr-800);
+}
+
+.D4, .h1, h2, h4, h5, h6 {
+  color: var(--clr-900);
+}
