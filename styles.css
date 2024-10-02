@@ -277,7 +277,6 @@ nav {
     transition: all 200ms;
   }
 }
-
 #sign-in {
   display: none;
   img {
@@ -287,21 +286,16 @@ nav {
 }
 .burger {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: transparent;
   border: none;
-  padding: 1rem .5rem;
-  row-gap: 6px;
+  padding: 1rem;
+  i {
+    font-size: 1.25rem;
+  }
 }
-.bar {
-  width: 24px;
-  height: 3px;
-  border-radius: 1px;
-  /* background-color: var(--clr-800); */
-  background-color: red;
-}
+
 .headline {
   grid-area: hero-headline;
   h1 {
