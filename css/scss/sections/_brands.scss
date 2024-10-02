@@ -1,0 +1,30 @@
+#brands {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand-box {
+  @include center;
+  border: 1px solid var(--clr-300);
+  border-radius: 8px;
+  height: 100px;
+  width: 160px;
+}
+
+#brands {
+  @include tablet {
+    display: flex;
+    padding-block: 5rem;
+    #logo-5, #logo-6 {
+      display: none;
+    }
+  }
+  @include desktop {
+    .brand-box {
+      width: 200px;
+    }
+    #logo-5, #logo-6 {
+      display: flex;
+    }
+  }
+}

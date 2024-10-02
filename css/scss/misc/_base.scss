@@ -14,12 +14,11 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+html {
+  color-scheme: light;
+}
+
 body {
-  // font-family: "Manrope", sans-serif;
-  // font-optical-sizing: auto;
-  // font-weight: 400;
-  // font-size: 1rem;
-  // font-style: normal;
   @include text;
   font-size: 1rem;
   color: #0B0F19;

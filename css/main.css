@@ -191,6 +191,10 @@ nav, section {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+html {
+  color-scheme: light;
+}
+
 body {
   font-family: "Manrope", sans-serif;
   font-style: normal;
@@ -442,6 +446,112 @@ nav {
   }
   header .mkt-btns .btn-market {
     padding: 0.75rem 1.5rem;
+  }
+}
+
+#brands {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--clr-300);
+  border-radius: 8px;
+  height: 100px;
+  width: 160px;
+}
+
+@media (min-width: 768px) {
+  #brands {
+    display: flex;
+    padding-block: 5rem;
+  }
+  #brands #logo-5, #brands #logo-6 {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+  #brands .brand-box {
+    width: 200px;
+  }
+  #brands #logo-5, #brands #logo-6 {
+    display: flex;
+  }
+}
+
+.feature-img {
+  display: none;
+  width: 100%;
+  grid-area: feature-img;
+}
+
+.feature-text {
+  grid-area: feature-text;
+  text-align: center;
+  padding-block: 1rem;
+}
+.feature-text h2 {
+  margin-bottom: 1rem;
+}
+
+.cards {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.features {
+  display: grid;
+  grid-template-areas: "feature-text" "cards";
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.icon-card {
+  display: flex;
+  gap: 1.5rem;
+}
+.icon-card .icon {
+  min-width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(99, 102, 241, 0.1);
+  border-radius: 0.5rem;
+}
+.icon-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  #features {
+    grid-template-areas: "feature-text feature-text" "cards cards";
+    padding-bottom: 5rem;
+  }
+  #features .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1400px) {
+  #features {
+    grid-template-areas: "feature-img feature-text" "feature-img cards ";
+    -moz-column-gap: 10rem;
+         column-gap: 10rem;
+  }
+  #features .feature-img {
+    display: block;
+  }
+  #features .feature-text {
+    text-align: left;
+  }
+  #features .cards {
+    gap: 3rem;
   }
 }
 
